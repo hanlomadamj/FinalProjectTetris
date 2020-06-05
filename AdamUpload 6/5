@@ -1,0 +1,92 @@
+import java.awt.Graphics;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import java.awt.Font;
+import javax.swing.JButton;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+public class TetrisGame extends JPanel{
+    
+    public static void main(){
+        JFrame meframe= new JFrame("Tetris Knock-Off By Adam and Owen");  
+        meframe.getContentPane().add(new TetrisGame()); 
+        //This commenetd out stuff is to write in the start button
+        //It's method overide calls to start the game
+        //But isn't dispalying button and Board together...
+        //JButton b=new JButton("PLAY");    
+        //b.setBounds(100,100,140, 40);
+        //JLabel label = new JLabel();
+        //label.setBounds(10, 110, 200, 100);
+        //meframe.add(label);  
+       // meframe.getContentPane().add((b));  
+        //meframe.setLayout(null);    
+        meframe.setVisible(true); 
+        meframe.setSize(600, 1000);
+        meframe.setVisible(true); //always needs to be on!!!! duh...
+        meframe.setResizable(false); //if on can change window size. But! does not scale images inside of it.
+        meframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+         
+       /*  
+        b.addActionListener(new ActionListener() {
+
+                @Override
+                public void actionPerformed(ActionEvent arg0) {
+                    label.setText("Starting game method...");               
+                }          
+            });
+        
+        */
+       //repaint(); 
+    }  
+    
+    public  void paint(Graphics g){
+         
+        //board is 10x20 grid lines of 40 pixel square cubes
+        //top and bottem lines of grid
+        g.drawLine(0, 40, 600, 40); 
+        g.drawLine(0, 900, 600, 900);
+        //vert 10 lines
+        g.drawLine(40, 40, 40, 900);
+        g.drawLine(80, 40, 80, 900);
+        g.drawLine(120, 40, 120, 900);
+        g.drawLine(160, 40, 160, 900);
+        g.drawLine(200, 40, 200, 900);
+        g.drawLine(240, 40, 240, 900);
+        g.drawLine(280, 40, 280, 900);
+        g.drawLine(320, 40, 320, 900);
+        g.drawLine(360, 40, 360, 900);
+        g.drawLine(400, 40, 400, 900);
+        //20 cross lines
+        g.drawLine(0, 80, 400, 80); 
+        g.drawLine(0, 120, 400, 120); 
+        g.drawLine(0, 160, 400, 160); 
+        g.drawLine(0, 200, 400, 200); 
+        g.drawLine(0, 240, 400, 240); 
+        g.drawLine(0, 280, 400, 280); 
+        g.drawLine(0, 320, 400, 320); 
+        g.drawLine(0, 360, 400, 360); 
+        g.drawLine(0, 400, 400, 400); 
+        g.drawLine(0, 440, 400, 440); 
+        g.drawLine(0, 480, 400, 480); 
+        g.drawLine(0, 520, 400, 520); 
+        g.drawLine(0, 560, 400, 560); 
+        g.drawLine(0, 600, 400, 600); 
+        g.drawLine(0, 640, 400, 640); 
+        g.drawLine(0, 680, 400, 680); 
+        g.drawLine(0, 720, 400, 720); 
+        g.drawLine(0, 760, 400, 760); 
+        g.drawLine(0, 800, 400, 800); 
+        //some boxes
+        g.drawRect(415, 155, 150, 150); // left x, left y, W, H
+        g.drawRect(415, 70, 150, 55);
+        //this is the text section
+        g.setFont(new Font("Serif" , Font.BOLD , 24));  //Type and Style of Text
+        g.drawString("TETRIS KNOCK-OFF", 20, 25); //Location and text
+        g.drawString("SCORE", 415, 65); //415 area to put text in right shoulder box
+        g.drawString("Next Piece...", 415, 150);
+
+    }
+}
